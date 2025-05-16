@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" href="./pages/index.css" />
-    <script src="index.js" defer></script>
+    <script src="index.js" type="module" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,7 +29,29 @@
         </nav>
       </header>
 
-      <main id="container" class="container"></main>
+      <main id="container" class="container">
+        <section class="todo">
+          <h2 class="todo__title">Lista de Tareas</h2>
+          <div class="todo__input-container">
+            <input type="text" class="todo__input" placeholder="Nueva tarea...">
+            <button class="todo__add-button">Agregar</button>
+          </div>
+          
+          <div class="todo__lists">
+            <div class="todo__pending">
+              <h3 class="todo__subtitle">Tareas Pendientes</h3>
+              <ul class="todo__list" id="pendingTasks">
+              </ul>
+            </div>
+            
+            <div class="todo__completed">
+              <h3 class="todo__subtitle">Tareas Completadas</h3>
+              <ul class="todo__list" id="completedTasks">
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <footer class="footer">
         <div class="footer__content">
