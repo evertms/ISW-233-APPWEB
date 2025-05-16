@@ -1,0 +1,12 @@
+.page {
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex-grow: 1;
+    padding: 20px;
+}

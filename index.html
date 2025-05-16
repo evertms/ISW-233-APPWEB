@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <link rel="stylesheet" href="./pages/index.css" />
-
+    <script src="index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Serif:ital@0;1&display=swap"
+    rel="stylesheet"
     />
     <title>Exercise DOM API</title>
   </head>
@@ -37,7 +37,7 @@
             <h3 class="footer__social-heading">Redes sociales</h3>
             <ul class="footer__list">
               <li class="footer__list-item">
-                <a href="#" class="footer__social-link"
+                <a href="https://facebook.com/evert.morenoserrate.5" class="footer__social-link"
                   ><img
                     src="./images/facebook_white.svg"
                     alt="Logo Facebook"
@@ -57,8 +57,18 @@
             </ul>
           </div>
         </div>
-        <div class="footer__copyright">&copy; 2025 Your Name</div>
+        <div class="footer__copyright">&copy; 2025 Evert Moreno</div>
       </footer>
     </div>
+    <template id="card__template">
+      <article class="card">
+        <h3 class="card__title"></h3>
+        <div class="card__body">
+          <div class='card__body__image'></div>
+          <section class='card__body__content'>
+          </section>
+        </div>
+        </article>
+    </template>
   </body>
 </html>
