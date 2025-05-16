@@ -8,3 +8,9 @@
     align-items: stretch;
     gap: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
