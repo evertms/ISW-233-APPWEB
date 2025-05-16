@@ -1,0 +1,33 @@
+.card {
+    display: block;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    border: 7px solid #e0e0e0;
+}
+
+.card__title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #000;
+}
+
+.card__body {
+    display: flex;
+    gap: 20px;
+}
+
+.card__body__image {
+    width: 120px;
+    height: 120px;
+    background: #f0f0f0;
+    border-radius: 50%;
+}
+
+.card__body__content {
+    flex: 1;
+    color: #000;
+}
