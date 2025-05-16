@@ -1,3 +1,5 @@
+import { fetchMovies } from './api/api.js';
+
 // TODO: Use the DOM API to create the card components
 // 1. Seleccione el container
 const container = document.getElementById("container");
@@ -9,15 +11,21 @@ const container = document.getElementById("container");
  *
  * @return {HTMLElement}
  */
-function createCardComponent(title, body) {
+function createCardComponent(movie) {
     const template = document.getElementById("card__template");
     const element = template.content.cloneNode(true).firstElementChild;
     
     const elementTitle = element.querySelector(".card__title");
-    elementTitle.textContent = title;
+    elementTitle.textContent = movie.title;
     
     const elementBody = element.querySelector(".card__body__content");
-    elementBody.textContent = body;
+    elementBody.innerHTML = `
+        <p><strong>Descripción:</strong> ${movie.overview}</p>
+        <p><strong>Fecha de lanzamiento:</strong> ${movie.release_date}</p>
+        <p><strong>Calificación promedio:</strong> ${movie.vote_average}/10</p>
+        <p><strong>Número de votos:</strong> ${movie.vote_count}</p>
+        <p><strong>Idioma original:</strong> ${movie.original_language.toUpperCase()}</p>
+    `;
     
     return element;
 }
