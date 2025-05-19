@@ -1,4 +1,12 @@
 import { fetchMovies } from './api/api.js';
+import { CommandExecutor } from './services/command.js';
+import { Commands } from './services/commands.js';
+import { TodoItem } from './services/todoItem.js';
+import { TodoList } from './services/todoList.js';
+
+// globalThis -------
+globalThis.DOM = {};
+
 
 // TODO: Use the DOM API to create the card components
 // 1. Seleccione el container
@@ -43,7 +51,7 @@ async function loadMovieCards() {
     container.appendChild(movieSection);
 }
 
-// Call the function when the DOM is loaded
+/*
 document.addEventListener('DOMContentLoaded', () => {
     loadMovieCards();
     const input = document.querySelector('.todo__input');
@@ -112,4 +120,42 @@ document.addEventListener('DOMContentLoaded', () => {
             addTodo();
         }
     });
+});
+*/
+
+function renderList() {
+    const todoList = getInstance();
+    for (const todo of todoList.items()) {
+        const li = document.createElement("li");
+        li.classList.add("todo__item");
+        li.innerHTML = `
+            <span class="todo__item-text">${todo.text}</span>
+            <div class="todo__item-buttons">
+                <button class="todo__button todo__button--done">Done</button>
+                <button class="todo__button todo__button--delete">Delete</button>
+            </div>
+        `;
+            DOM.todoList.appendChild(li);
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    DOM.todoInput = document.querySelector(".todo__input");
+    DOM.addBtn = document.querySelector(".todo__add-button");
+    DOM.todoList = document.getElementById("pendingTasks");
+
+    loadMovieCards();  // Cargar las películas
+
+    DOM.addBtn.addEventListener("click", () => {
+        const cmd = new Command(Commands.ADD);
+        CommandExecutor.execute(cmd);
+        //TODO 
+    });
+
+    DOM.todoList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("delete-btn")) {
+            // TODO
+        }
+    });
+    todoList.getInstance().addObserver(renderList);
 });
