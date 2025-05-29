@@ -1,6 +1,6 @@
 const Store = {
   menu: null,
-  cart: [],
+  cart: []
 };
 
 const proxiedStore = new Proxy(Store, {
