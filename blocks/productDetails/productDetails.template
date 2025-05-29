@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/blocks/productDetails/productDetails.css" />
+  <section class="product-details">
+    <h2 class="product-details__title"></h2>
+    <div class="product-details__image-container"> 
+      <img src="" alt="Imagen del producto" class="product-details__image">
+    </div>
+    <p class="product-details__description"></p>
+    <p class="product-details__price">Precio: </p>
+  </section>

@@ -35,11 +35,10 @@ const Router = {
         break;
       default:
         if (route.startsWith("/products/")) {
-          pageElement = document.createElement("h2");
-
+          //pageElement = document.createElement("h2");
+          pageElement = document.createElement("product-details");
           const paramId = route.substring(route.lastIndexOf("/") + 1);
-          pageElement.textContent = "Product detail page: " + String(paramId);
-
+          //pageElement.textContent = "Product detail page: " + String(paramId);
           pageElement.dataset.productId = paramId;
         }
         break;
