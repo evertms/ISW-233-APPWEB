@@ -1,4 +1,4 @@
-export class HomePage extends HTMLElement {
+export default class HomePage extends HTMLElement {
 	constructor() {
 		super();
 		this.root = this.attachShadow({ mode: "open" });
